@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Password Generator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://kit.fontawesome.com/dc5d6629ca.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+
+  <div id="main">
+
+    <!-- TOP PAGE -->
+
+    <div class="container-fluid p-3">
+      <div class="align-items-center justify-content-center my-4 row">
+        <div class="col-sm-12 display-4 text-center text-white">
+          <i class="fas fa-unlock-alt m-2" aria-hidden="true"></i>
+          <span class="mx-4 title-top-text">Strong Password Generator</span>
+          <i class="fas fa-unlock-alt m-2" aria-hidden="true"></i>
+        </div>
+      </div>
+      
+    </div>
+
+    <!-- MAIN ELEMENTS -->
+
+    <main class="container mx-auto pb-4">
+      <ul class="generator list-group mb-4 shadow-sm">
+        <!-- NUMBERS ROW -->
+        <li class="list-group-item pt-4">
+          <div class="row">
+            <span class="col-sm-5 pb-2  font-weight-bold">
+              Include Numbers:
+            </span>
+            <div class="custom-control custom-checkbox pl-3">
+              <input type="checkbox" name="" id="numbers" checked="">
+              <label for="numbers">[0123456789]</label>
+            </div>
+          </div>
+        </li>
+        <!-- LOWE CASE ROW -->
+        <li class="list-group-item pt-4">
+          <div class="row">
+            <span class="col-sm-5 pb-2  font-weight-bold">
+              Include Lowercase Letters:
+            </span>
+            <div class="custom-control custom-checkbox pl-3">
+              <input type="checkbox" name="" id="lowercase" checked="">
+              <label for="lowercase">[abcdefgh...xyz]</label>
+            </div>
+          </div>
+        </li>
+        <!-- UPPER CASE ROW  -->
+        <li class="list-group-item pt-4">
+          <div class="row">
+            <span class="col-sm-5 pb-2  font-weight-bold">
+              Include Uppercase Letters:
+            </span>
+            <div class="custom-control custom-checkbox pl-3">
+              <input type="checkbox" name="" id="uppercase" checked="">
+              <label for="uppercase">[ABCDEFGH...XYZ]</label>
+            </div>
+          </div>
+        </li>
+        <!-- SPECIAL CHARACTERS ROW -->
+        <li class="list-group-item pt-4">
+          <div class="row">
+            <span class="col-sm-5 pb-2  font-weight-bold">
+              Include Special Characters:
+            </span>
+            <div class="custom-control custom-checkbox pl-3">
+              <input type="checkbox" name="" id="chars">
+              <label for="chars">[!@#$%^&amp;()+_-=}{[]|:;"/?.&gt;&lt;,`~]</label>
+            </div>
+          </div>
+        </li>
+        <!-- EXCLUDE CHARACTERS ROW
+          <li class="list-group-item pt-4">
+            <div class="row">
+              <span class="col-sm-5 pb-2  font-weight-bold">
+                Exclude Characters:
+              </span>
+              <div class="custom-control custom-checkbox pl-3">
+                <input type="text" name="" id="exchars" checked>
+              </div>
+            </div>
+          </li> -->
+        <!-- PASSWORD LENGTH  -->
+        <li class="list-group-item pt-4">
+          <div class="row">
+            <span class="col-sm-5 pb-2  font-weight-bold">
+              Password Length:
+            </span>
+            <div class="custom-control custom-checkbox pl-3">
+              <select class="form-control select-password-length" id="pwdlength">
+                <option>8</option>
+                <option>9</option>
+                <option>10</option>
+                <option>11</option>
+                <option>12</option>
+                <option>13</option>
+                <option>14</option>
+                <option>15</option>
+                <option>16</option>
+                <option>17</option>
+                <option>18</option>
+                <option>19</option>
+                <option>20</option>
+                <option>21</option>
+                <option>22</option>
+                <option>23</option>
+                <option>24</option>
+                <option>25</option>
+                <option>26</option>
+                <option>27</option>
+                <option>28</option>
+                <option>29</option>
+                <option>30</option>
+                <option>31</option>
+                <option>32</option>
+                <option>33</option>
+                <option>34</option>
+                <option>35</option>
+                <option>36</option>
+                <option>37</option>
+                <option>38</option>
+                <option>39</option>
+                <option>40</option>
+              </select>
+            </div>
+          </div>
+        </li>
+        <!-- BUTTON GENERATE -->
+        <li class="list-group-item pt-4">
+          <div class="row">
+            <button class="btn btn-secondary p-2 m-auto d-block generate-password" id="generatebtn">
+              <i class="fas fa-bolt" aria-hidden="true"></i> Generate Password
+            </button>
+          </div>
+        </li>
+        <!-- COPY THE PASSWORD -->
+        <li class="list-group-item pt-4">
+          <div class="input-group mb-3">
+            <input type="text" class="form-control result" placeholder="New password goes here..."
+              aria-label="New password goes here..." aria-describedby="btn-copy" id="resultspw">
+            <div class="input-group-append">
+              <button class="btn btn-success copy" data-toggle="tooltip" data-placement="top" data-trigger="click"
+                title="" type="button" id="btn-copy" data-original-title="Copied">
+                <i class="far fa-copy" aria-hidden="true"></i>
+                <span id="copy">Copy</span>
+                <span id="copied" style="display: none;">Copied!</span>
+              </button>
+            </div>
+          </div>
+        </li>
+
+
+      </ul>
+    </main>
+
+    <!-- HINT TIPS COMMMENT HERE -->
+    <!-- <div class="callout callout-primary">
+        <h4>Password Hint!</h4>
+        A strong password must have at least 16 characters, one number, one lowercase letter, one uppercase letter, and one special character.
+      </div> -->
+
+
+
+  </div>
+
+
+  <script src="js/scripts.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+}
+
+.title-top{
+    color: white;
+}
+
+#main{
+    background: linear-gradient(to top right,#460066 0%,#0000FF 100%);
+    min-height: 100vh;
+}
+
+.container.mb-4{
+    width: 53%;
+}
+
+.title-top
+{
+    .title-top-text{
+        font-weight: 700;
+    }
+}

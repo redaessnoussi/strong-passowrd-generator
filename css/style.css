@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+}
+
+.title-top {
+  color: white;
+}
+
+#main {
+  background: -webkit-gradient(linear, left bottom, right top, from(#500066), to(#0000FF));
+  background: linear-gradient(to top right, #500066 0%, #0000FF 100%);
+  min-height: 100vh;
+}
+
+.container.mb-4 {
+  width: 53%;
+}
+
+.title-top .title-top-text {
+  font-weight: 700;
+}
+/*# sourceMappingURL=style.css.map */
